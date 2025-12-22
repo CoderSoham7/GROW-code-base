@@ -1,0 +1,12 @@
+functions-framework==3.*
+google-cloud-storage==2.*
+pymongo==4.*
+boto3==1.*
+python-dotenv==1.*
+cryptography
+requests
+datetime
+google-auth
+tenacity
+urllib3
+pydantic

@@ -1,0 +1,10 @@
+node_modules
+build
+.env
+/Backend/savant-manual-testing-serviceaccount-key.json
+TECHNICAL_SPEC.md
+CODING_SESSION_IDEA.md
+coding-tasks.md
+COMPREHENSIVE_TECHNICAL_SPEC.md
+CODING-TASK-CHECKLIST.md
+.pem

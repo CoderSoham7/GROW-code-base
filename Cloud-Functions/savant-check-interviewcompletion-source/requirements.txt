@@ -1,0 +1,9 @@
+functions-framework==3.*
+boto3>=1.28.59
+cryptography
+flask
+pymongo
+python-dotenv
+requests
+tenacity
+google-auth

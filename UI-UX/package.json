@@ -1,0 +1,66 @@
+{
+  "name": "savant-interview-bot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "Backend/Server.js",
+  "type": "module",
+  "build": "react-scripts build --no-source-maps",
+  "scripts": {
+    "test": "mocha",
+    "start": "node Backend/Server.js",
+    "server": "nodemon --delay 4000ms Backend/Server.js",
+    "client": "npm start --prefix Frontend",
+    "dev": "concurrently \"npm run server \" \"npm run client \""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VinayakMathurAI/GenCHiringQA"
+  },
+  "author": "Vinayak Mathur, Aditi Chaterjee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VinayakMathurAI/GenCHiringQA/issues"
+  },
+  "homepage": "https://github.com/VinayakMathurAI/GenCHiringQA/#readme",
+  "dependencies": {
+    "@azure/msal-node": "^2.6.6",
+    "@google-cloud/storage": "^6.12.0",
+    "adm-zip": "^0.5.10",
+    "axios": "^1.10.0",
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "concurrently": "^7.4.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dompurify": "^3.2.6",
+    "dotenv": "^16.0.2",
+    "express": "^4.21.2",
+    "express-async-handler": "^1.2.0",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-validator": "^7.0.1",
+    "extract-zip": "^2.0.1",
+    "file-saver": "^2.0.5",
+    "google-auth-library": "^9.0.0",
+    "helmet": "^7.1.0",
+    "howler": "^2.2.3",
+    "https": "^1.0.0",
+    "import": "^0.0.6",
+    "ip-range-check": "^0.2.0",
+    "jsdom": "^26.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "moment": "^2.30.1",
+    "mongodb": "^6.4.0",
+    "mongoose": "^8.16.2",
+    "multer": "^2.0.1",
+    "node-cron": "^3.0.2",
+    "nodemon": "^3.1.10",
+    "papaparse": "^5.4.1",
+    "react-scripts": "^5.0.1",
+    "sharp": "^0.33.2",
+    "validator": "^13.11.0"
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  }
+}

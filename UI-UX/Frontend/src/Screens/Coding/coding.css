@@ -1,0 +1,452 @@
+.coding-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 15px;
+}
+
+.coding-welcome-message {  
+  margin-bottom: 100px;  
+  width: 100%; 
+  display: flex;  
+  flex-direction: column;  
+  align-items: center; 
+  justify-content: center;
+  padding: 30px 20px;
+  box-shadow: 0px 1px 3px 0px rgb(210, 206, 206);  
+  border-radius: 10px;  
+  background-color: #f8f9fa;
+  color: #08084e;
+  border: 1px solid #e9ecef;
+}
+
+.coding-welcome-message h4 {
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #0961b0;
+  font-size: 1.4rem;
+}
+
+.coding-welcome-message p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.welcome-instruction {
+  font-size: 1rem !important;
+  margin-top: 20px !important;
+  padding: 10px;
+  background-color: rgba(9, 97, 176, 0.1);
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.no-sessions-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 100%;
+  padding: 20px;
+}
+
+.no-sessions-card {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.no-sessions-icon {
+  font-size: 3rem;
+  color: #08084e;
+  margin-bottom: 20px;
+}
+
+.no-sessions-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #08084e;
+  margin-bottom: 10px;
+}
+
+.no-sessions-message {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+/* Enhanced Coding Input Styles */
+.enhanced-coding-input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.coding-input-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.coding-input-label {
+  font-weight: 500;
+  color: #08084e;
+  font-size: 14px;
+}
+
+.subjective-input-container {
+  width: 100%;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.subjective-input {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: none; /* Removed resizing capability */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.subjective-input:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+.code-snippets-container {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.code-snippet-preview {
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.code-snippet-header {
+  background-color: #e9ecef;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ced4da;
+}
+
+.code-snippet-header span {
+  font-weight: 500;
+  color: #08084e;
+}
+
+.code-snippet-header button {
+  margin-left: 8px;
+}
+
+.code-snippet-content {
+  padding: 15px;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  font-family: monospace;
+  white-space: pre-wrap;
+  background-color: #f8f9fa;
+  line-height: 1.5;
+}
+
+.input-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.input-actions button {
+  transition: all 0.2s;
+}
+
+.input-actions button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+/* Using the circular send button style from interview page */
+.chat-send-btn {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Code Modal Styles */
+.code-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.code-modal-content {
+  background-color: #fff;
+  border-radius: 6px;
+  width: 90%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+}
+
+.code-modal-header {
+  padding: 15px;
+  background-color: #e9ecef;
+  font-weight: bold;
+  border-bottom: 1px solid #ced4da;
+}
+
+.code-editor {
+  min-height: 300px;
+  padding: 12px;
+  font-size: 14px;
+  font-family: monospace;
+  border: none;
+  resize: vertical;
+  width: 100%;
+  outline: none;
+}
+
+.code-modal-actions {
+  padding: 15px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border-top: 1px solid #ced4da;
+}
+
+/* Chat message styles for code display */
+.chat-message.candidate pre {
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 0 0 4px 4px;
+  border-left: 3px solid #007bff;
+  font-family: monospace;
+  white-space: pre-wrap;
+  margin: 10px 0;
+  overflow-x: auto;
+  tab-size: 4;
+  -moz-tab-size: 4;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #08084e; /* Set code text color to #08084e as requested */
+}
+
+.code-block {
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 0 0 4px 4px;
+  border-left: 3px solid #007bff;
+  font-family: monospace;
+  white-space: pre-wrap;
+  margin: 0;
+  overflow-x: auto;
+  tab-size: 4;
+  -moz-tab-size: 4;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #08084e; /* Set code text color to #08084e as requested */
+}
+
+.code-block-container {
+  margin: 10px 0;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.code-language-indicator {
+  background-color: #e9ecef;
+  color: #495057;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-family: sans-serif;
+  border-bottom: 1px solid #ced4da;
+  border-radius: 4px 4px 0 0;
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+}
+
+/* Style for specific programming languages */
+.code-block.language-python {
+  border-left: 3px solid #3572A5; /* Python blue */
+}
+
+.code-block.language-javascript, .code-block.language-js {
+  border-left: 3px solid #f0db4f; /* JavaScript yellow */
+}
+
+.code-block.language-html {
+  border-left: 3px solid #e34c26; /* HTML orange */
+}
+
+.code-block.language-css {
+  border-left: 3px solid #563d7c; /* CSS purple */
+}
+
+.code-block.language-java {
+  border-left: 3px solid #b07219; /* Java brown */
+}
+
+.code-block.language-cpp, .code-block.language-c {
+  border-left: 3px solid #f34b7d; /* C/C++ pink */
+}
+
+/* Add better whitespace handling in general message text */
+.message-text {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Ensure code samples have proper spacing */
+.chat-message pre code {
+  display: block;
+  background-color: #f8f9fa;
+  padding: 8px;
+  overflow-x: auto;
+  font-family: monospace;
+  tab-size: 4;
+  -moz-tab-size: 4;
+  color: #08084e; /* Set code text color to #08084e as requested */
+}
+
+/* Ensure all code blocks and pre elements use the specified color */
+pre, code, .code-block, .code, pre code {
+  color: #08084e !important; /* !important to ensure the color is applied */
+}
+
+/* Network Error Styles */
+.network-error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+}
+
+.network-error-message {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.network-error-message h3 {
+  color: #08084e;
+  margin-bottom: 15px;
+}
+
+.network-error-message p {
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+.network-error-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.retry-btn {
+  background-color: #08084e;
+  border-color: #08084e;
+}
+
+.retry-btn:hover {
+  background-color: #0a0a6e;
+  border-color: #0a0a6e;
+}
+
+.network-status-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  margin: 15px auto;
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  border-radius: 4px;
+  color: #856404;
+  font-size: 14px;
+  max-width: 90%;
+}
+
+.network-status-indicator span {
+  margin-right: 10px;
+}
+
+.network-status-indicator button {
+  padding: 0;
+  color: #0d6efd;
+  font-size: 14px;
+}
+
+/* Add animation for retry effect */
+@keyframes retry-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(8, 8, 78, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(8, 8, 78, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(8, 8, 78, 0); }
+}
+
+.retry-btn:focus {
+  animation: retry-pulse 1.5s infinite;
+}
+
+/* Empty state placeholder */
+.no-messages-placeholder {
+  text-align: center;
+  padding: 40px 20px;
+  margin: 20px auto;
+  background-color: rgba(9, 97, 176, 0.05);
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+}
+
+.no-messages-placeholder p {
+  color: #08084e;
+  font-size: 1.1rem;
+  opacity: 0.8;
+}

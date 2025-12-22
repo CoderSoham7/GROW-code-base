@@ -1,0 +1,6 @@
+.env
+UI-UX/Backend/cert.pem
+UI-UX/Backend/key.pem
+UI-UX/.env.development
+UI-UX/.gcloudignore
+UI-UX/app.yaml
