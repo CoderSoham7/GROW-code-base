@@ -19,38 +19,34 @@ ENV CUDA_HOME=/usr/local/cuda
 ENV PATH=${CUDA_HOME}/bin:${PATH}
 ENV LD_LIBRARY_PATH=/usr/local/cuda/lib64:/usr/local/nvidia/lib:/usr/local/nvidia/lib64
 
-# Optional: tame parallel compilation if memory is tight
+# Optional: reduce parallel compilation memory footprint
 ENV MAX_JOBS=2
 
-# Optional: restrict to your target GPU arch to reduce compile time/memory
-# Uncomment ONE of these if you know your deployment GPU:
-# A100:
-# ENV TORCH_CUDA_ARCH_LIST=8.0
-# H100:
-# ENV TORCH_CUDA_ARCH_LIST=9.0
+# Optional: restrict to target GPU arch to reduce compile time/memory
+# Uncomment ONE if applicable:
+# ENV TORCH_CUDA_ARCH_LIST=8.0   # A100
+# ENV TORCH_CUDA_ARCH_LIST=9.0   # H100
 
 WORKDIR /app
 
 # -------------------------------------------------------------------
 # IMPORTANT: Install PyTorch (CUDA wheel) BEFORE flash-attn.
-# Choose ONE of the official CUDA indices from pytorch.org:
-# cu126 (CUDA 12.6) is the current stable at time of writing.
-# If your stack prefers CUDA 12.4, use cu124 line instead.
+# Use ONE official index from pytorch.org Get Started:
+# cu126 (CUDA 12.6) is current stable; cu124 also widely available.
 # -------------------------------------------------------------------
 RUN python3.11 -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126
 # Alternative:
 # RUN python3.11 -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
 
-# Copy your application requirements
+# Copy and install your application dependencies
 COPY app/requirements.txt /app/requirements.txt
-
-# Install app dependencies (ensure requirements.txt DOES NOT override torch with a CPU-only wheel)
+# Ensure requirements.txt does NOT override torch with a CPU-only wheel!
 RUN python3.11 -m pip install -r /app/requirements.txt
 
 # Install flash-attn WITHOUT build isolation so it can import torch during build
 RUN python3.11 -m pip install flash-attn --no-build-isolation
 
-# Copy the rest of the application code
+# Copy the rest of the code
 COPY . /app
 
 # Metadata (optional)
