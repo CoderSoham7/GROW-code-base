@@ -1,0 +1,64 @@
+runtime: nodejs20
+
+instance_class: F2
+
+service: cognizant-role-accredit-bot
+
+vpc_access_connector:
+  name: "projects/cog01k2y024cd8wbctssq11xdjrs6/locations/us-central1/connectors/savant-function-connector"
+  egress_setting: all-traffic
+
+
+service_account: savant-serviceaccount-key@cog01k2y024cd8wbctssq11xdjrs6.iam.gserviceaccount.com
+
+env_variables:
+  MONGODB_URI: mongodb://savantuseradmin:2959savant3702@10.0.0.22:27017/savantmongodb?authSource=admin
+  GCP_BUCKET_NAME: 'savant-interviewfile-storage'
+  PORT: '8080'
+  JWT_TOKEN: 'vkshdfiuh3KIDHSGJKfdsfhkvs987432'
+  NODE_ENV: 'PROD'
+  CORS_ORIGINS: "https://cognizant-role-accredit-bot-dot-cog01k2y024cd8wbctssq11xdjrs6.uc.r.appspot.com;https://login.microsoftonline.com;https://graph.microsoft.com"
+  CHAT_FUNC_URL: savant-claude-851059891287.us-central1.run.app/chat
+  STT_FUNC_URL: savant-stt-851059891287.us-central1.run.app/writeText
+  TTS_FUNC_URL: savant-tts-851059891287.us-central1.run.app/readtext
+  CL_PROCESS_FUNC_URL: savant-cl-process-851059891287.us-central1.run.app/initialize_interview
+  CHECK_INTERVIEW_COMPLETION_FUNC_URL: savant-check-interviewcompletion-851059891287.us-central1.run.app/check_interview_completion
+  CLIENT_ID: c3e94688-c769-464e-ad12-fd48f431a62c 
+  CLIENT_SECRET: 5DN8Q~OVsIapUKNZxZOrxuKaPPhovbdyC1DeSb_K
+  TENANT_ID: de08c407-19b9-427d-9fe8-edf254300ca7  
+  REDIRECT_URI: "https://cognizant-role-accredit-bot-dot-cog01k2y024cd8wbctssq11xdjrs6.uc.r.appspot.com/auth/callback"
+  SSO_AUTH: "https://login.microsoftonline.com/de08c407-19b9-427d-9fe8-edf254300ca7"
+  GRAPH_URL: "https://graph.microsoft.com/v1.0/me"
+
+handlers:
+  - url: /api/.*
+    script: auto
+    secure: always
+
+  - url: /(^.*(index\.html)?$)
+    static_files: Frontend/build/index.html
+    upload: Frontend/build/index.html
+    secure: always
+    http_headers:
+      Cache-Control: "no-cache, no-store, must-revalidate"
+
+  - url: /static/(.+\.(js|css|png|jpg|jpeg|gif|woff|woff2|ttf|svg|ico|otf))$
+    static_files: Frontend/build/static/\1
+    upload: Frontend/build/static/(.+\.(js|css|png|jpg|jpeg|gif|woff|woff2|ttf|svg|ico|otf))$
+    secure: always
+    http_headers:
+      Cache-Control: "public, max-age=31536000, immutable"
+
+  - url: /(.+\.(json|png|jpg|jpeg|gif|ico))$
+    static_files: Frontend/build/\1
+    upload: Frontend/build/(.+\.(json|png|jpg|jpeg|gif|ico))$
+    secure: always
+    http_headers:
+      Cache-Control: "public, max-age=31536000, immutable"
+
+  - url: /.*
+    static_files: Frontend/build/index.html
+    upload: Frontend/build/index.html
+    secure: always
+    http_headers:
+      Cache-Control: "no-cache, no-store, must-revalidate"
